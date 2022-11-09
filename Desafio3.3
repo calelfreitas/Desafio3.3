@@ -2,59 +2,45 @@ import time
 rodadas=int(input("Insira a quantidade de rodadas ou 0 para sair: "))
 vitoriadario=[]
 vitoriaxerxes=[]
-while True:
-    if rodadas!=0 and rodadas<999:
-        for i in range(rodadas):
-            dario=int(input("\nEntre com o valor da mão de dario, de 0 até 4: "))
-            xerxes=int(input("Entre com o valor da mão de xerxes, de 0 até 4: "))
-            if (dario>=0) and (dario<=4) or (xerxes>=0) and (xerxes<=4):
-                if (dario==0) and (xerxes==1 or xerxes==2):
-                    vitoriadario.append(1)
-                    print("dario ganhou a rodada")
-                elif (dario==1) and (xerxes==2 or xerxes==3):
-                    vitoriadario.append(1)
-                    print("dario ganhou a rodada")
-                elif (dario==2) and (xerxes==3 or xerxes==4):
-                    vitoriadario.append(1)
-                    print("dario ganhou a rodada")
-                elif (dario==3) and (xerxes==4 or xerxes==0):
-                    vitoriadario.append(1)
-                    print("dario ganhou a rodada")
-                elif (dario==4) and (xerxes==0 or xerxes==1):
-                    vitoriadario.append(1)
-                    print("dario ganhou a rodada")
-                elif (xerxes==0) and (dario==1 or dario==2):
-                    vitoriaxerxes.append(1)
-                    print("xerxes ganhou a rodada")
-                elif (xerxes==1) and (dario==2 or dario==3):
-                    vitoriaxerxes.append(1)
-                    print("xerxes ganhou a rodada")
-                elif (xerxes==2) and (dario==3 or dario==4):
-                    vitoriaxerxes.append(1)
-                    print("xerxes ganhou a rodada")
-                elif (xerxes==3) and (dario==4 or dario==0):
-                    vitoriaxerxes.append(1)
-                    print("xerxes ganhou a rodada")
-                elif (xerxes==4) and (dario==0 or dario==1):
-                    vitoriaxerxes.append(1)
-                    print("xerxes ganhou a rodada")
-                elif xerxes==0 and dario==0:
-                    print("Empatou!")
-                elif xerxes==1 and dario==1:
-                    print("Empatou!")
-                elif xerxes==2 and dario==2:
-                    print("Empatou!")
-                elif xerxes==3 and dario==3:
-                    print("Empatou!")
-                elif xerxes==4 and dario==4:
-                    print("Empatou!")
-            elif i%2==1:
-                break
-            if vitoriaxerxes.count(1)<vitoriadario.count(1):
-                print("\ndario venceu a partida")
-            elif vitoriaxerxes.count(1)>vitoriadario.count(1):
-                print("\nxerxes venceu a partida")
-        time.sleep(5)
-    else:
-        print("Você saiu do jogo!")
-        break
+if rodadas!=0 and rodadas<=999 and rodadas%2==1:
+    for i in range(rodadas):
+        dario=int(input("Entre com o valor da mão de Dário, de 0 até 4: "))
+        xerxes=int(input("Entre com o valor da mão de Xerxes, de 0 até 4: "))
+        if (dario>=0) and (dario<=4) or (xerxes>=0) and (xerxes<=4):
+            if (dario==0) and (xerxes==1 or xerxes==2):
+                vitoriadario.append(1)
+                print("dario ganhou a rodada")
+            elif (dario==1) and (xerxes==2 or xerxes==3):
+                vitoriadario.append(1)
+                print("dario ganhou a rodada")
+            elif (dario==2) and (xerxes==3 or xerxes==4):
+                vitoriadario.append(1)
+                print("dario ganhou a rodada")
+            elif (dario==3) and (xerxes==4 or xerxes==0):
+                vitoriadario.append(1)
+                print("dario ganhou a rodada")
+            elif (dario==4) and (xerxes==0 or xerxes==1):
+                vitoriadario.append(1)
+                print("dario ganhou a rodada")
+            elif (xerxes==0) and (dario==1 or dario==2):
+                vitoriaxerxes.append(1)
+                print("xerxes ganhou a rodada")
+            elif (xerxes==1) and (dario==2 or dario==3):
+                vitoriaxerxes.append(1)
+                print("xerxes ganhou a rodada")
+            elif (xerxes==2) and (dario==3 or dario==4):
+                vitoriaxerxes.append(1)
+                print("xerxes ganhou a rodada")
+            elif (xerxes==3) and (dario==4 or dario==0):
+                vitoriaxerxes.append(1)
+                print("xerxes ganhou a rodada")
+            elif (xerxes==4) and (dario==0 or dario==1):
+                vitoriaxerxes.append(1)
+                print("xerxes ganhou a rodada")
+        elif i%2==1:
+            break
+time.sleep(10)
+if (vitoriaxerxes.count(1)<vitoriadario.count(1)):
+    print("\ndario venceu a partida")
+elif (vitoriaxerxes.count(1)>vitoriadario.count(1)):
+    print("\nxerxes venceu a partida")
